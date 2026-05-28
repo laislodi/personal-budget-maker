@@ -1,7 +1,7 @@
 // SRP: this module only handles HTTP communication with the auth endpoints.
 // Components depend on these typed functions, not on fetch directly (DIP).
 
-const API_BASE = '/api'
+const API_BASE = import.meta.env.VITE_API_BASE ?? '/api'
 
 async function handleResponse<T>(res: Response): Promise<T> {
   if (!res.ok) {
