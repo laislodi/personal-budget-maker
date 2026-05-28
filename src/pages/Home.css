@@ -1,0 +1,457 @@
+/* ── Hero ─────────────────────────────────────────────── */
+
+.hero {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #2563eb 100%);
+  color: #fff;
+  padding: 6rem 0 5rem;
+}
+
+.hero-content {
+  max-width: 680px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+  color: #fff;
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  margin-bottom: 2.25rem;
+  max-width: 560px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Sections ─────────────────────────────────────────── */
+
+.section {
+  padding: 5rem 0;
+}
+
+.section-alt {
+  background: var(--bg);
+}
+
+.section-header {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 3rem;
+}
+
+.section-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ── What is a budget ─────────────────────────────────── */
+
+.section-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .section-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.section-text p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 1rem;
+}
+
+.section-text p:last-child {
+  margin-bottom: 0;
+}
+
+.section-text em {
+  font-style: italic;
+  color: var(--text);
+}
+
+.budget-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.budget-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: var(--shadow-md);
+}
+
+.budget-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 0;
+}
+
+.budget-label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.budget-amount {
+  font-size: 1rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.budget-row.income .budget-amount {
+  color: var(--success);
+}
+
+.budget-row.expenses .budget-amount {
+  color: var(--danger);
+}
+
+.budget-divider {
+  height: 1px;
+  background: var(--border);
+  margin: 0.5rem 0;
+}
+
+.budget-row.balance .budget-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.balance-amount {
+  font-size: 1.3rem;
+  color: var(--primary) !important;
+}
+
+.budget-hint {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-align: right;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+/* ── Zero equation ────────────────────────────────────── */
+
+.zero-equation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-bottom: 3rem;
+}
+
+.eq-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 2rem;
+  box-shadow: var(--shadow);
+  min-width: 160px;
+}
+
+.eq-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+}
+
+.eq-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.income-block .eq-value { color: var(--success); }
+.expense-block .eq-value { color: var(--danger); }
+.zero-block { border-color: var(--primary); background: #eff6ff; }
+.zero-block .eq-value { color: var(--primary); }
+
+.eq-op {
+  font-size: 1.75rem;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+/* ── Outcome cards ────────────────────────────────────── */
+
+.outcome-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 680px) {
+  .outcome-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.outcome-card {
+  border-radius: 14px;
+  padding: 2rem;
+  border: 1px solid var(--border);
+}
+
+.outcome-positive {
+  background: #f0fdf4;
+  border-color: #bbf7d0;
+}
+
+.outcome-negative {
+  background: #fff7ed;
+  border-color: #fed7aa;
+}
+
+.outcome-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.outcome-icon {
+  font-size: 1.4rem;
+}
+
+.outcome-header h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.outcome-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+}
+
+.outcome-badge.positive {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.outcome-badge.negative {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.outcome-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.outcome-card p:last-child {
+  margin-bottom: 0;
+}
+
+.outcome-cta {
+  font-size: 0.82rem !important;
+  font-weight: 500;
+  color: var(--primary) !important;
+}
+
+/* ── Feature cards ────────────────────────────────────── */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.card-grid-4 {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+.feature-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.75rem;
+  box-shadow: var(--shadow);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.feature-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.feature-card-compact {
+  padding: 1.4rem;
+}
+
+.feature-icon {
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.feature-card h3 {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+
+.feature-card p {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Steps ────────────────────────────────────────────── */
+
+.steps {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 48px 24px 1fr;
+  gap: 0 1.25rem;
+  align-items: start;
+}
+
+.step-number {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.step-connector {
+  width: 2px;
+  background: var(--border);
+  margin: 0 auto;
+  height: calc(100% + 1.5rem);
+  margin-top: 48px;
+}
+
+.step-content {
+  padding-bottom: 2.5rem;
+}
+
+.step-content h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+  padding-top: 0.65rem;
+}
+
+.step-content p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── Bottom CTA ───────────────────────────────────────── */
+
+.cta-section {
+  background: var(--surface);
+}
+
+.cta-box {
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+  border-radius: 20px;
+  padding: 4rem 3rem;
+  text-align: center;
+  color: #fff;
+}
+
+.cta-box h2 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #fff;
+  margin-bottom: 0.75rem;
+}
+
+.cta-box p {
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 2rem;
+}
+
+.cta-box .btn-primary {
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.cta-box .btn-primary:hover {
+  background: #f0f9ff;
+}

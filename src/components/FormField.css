@@ -1,0 +1,83 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.form-field__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.form-field__input-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.form-field__input {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  font-size: 0.95rem;
+  color: var(--text);
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-field__input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+}
+
+.form-field__input:disabled {
+  background: var(--bg);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* when suffix is present give the input padding on the right */
+.form-field__suffix ~ .form-field__input,
+.form-field__input-wrap:has(.form-field__suffix) .form-field__input {
+  padding-right: 3rem;
+}
+
+.form-field__suffix {
+  position: absolute;
+  right: 0.6rem;
+  display: flex;
+  align-items: center;
+}
+
+.form-field__suffix button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.2rem 0.3rem;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.form-field__suffix button:hover {
+  color: var(--primary);
+}
+
+.form-field--error .form-field__input {
+  border-color: var(--danger);
+}
+
+.form-field--error .form-field__input:focus {
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+}
+
+.form-field__error {
+  font-size: 0.8rem;
+  color: var(--danger);
+  line-height: 1.4;
+}
