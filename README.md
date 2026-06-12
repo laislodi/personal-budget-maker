@@ -41,6 +41,21 @@ Income − (Expenses + Savings + Goals) = $0
 
 ## Tech stack
 
+### Backend
+
+| Technology | Version | Purpose |
+|---|---|---|
+| [Python](https://python.org) | 3.11 | Runtime |
+| [FastAPI](https://fastapi.tiangolo.com) | ≥ 0.115 | Web framework + OpenAPI docs |
+| [SQLAlchemy](https://www.sqlalchemy.org) | ≥ 2.0 | Async ORM (`Mapped[]` + `mapped_column()`) |
+| [Alembic](https://alembic.sqlalchemy.org) | ≥ 1.13 | Database migrations |
+| [Pydantic v2](https://docs.pydantic.dev) | ≥ 2.7 | Request / response validation |
+| [aiosqlite](https://github.com/omnilib/aiosqlite) | ≥ 0.20 | SQLite async driver (local dev) |
+| [asyncpg](https://github.com/MagicStack/asyncpg) | ≥ 0.29 | PostgreSQL async driver (production) |
+| [python-jose](https://github.com/mpdavis/python-jose) | ≥ 3.3 | JWT encode / decode |
+| [passlib](https://passlib.readthedocs.io) | ≥ 1.7 | Password hashing (bcrypt) |
+
+
 ### Frontend
 
 | Technology | Version | Purpose |
@@ -51,10 +66,6 @@ Income − (Expenses + Savings + Goals) = $0
 | [React Router](https://reactrouter.com) | 6 | Client-side routing |
 
 No UI component library, no CSS framework — styles are written from scratch using CSS custom properties for consistency.
-
-### Backend
-
-The API is built with Python · FastAPI · SQLAlchemy 2 (async) · PostgreSQL. See the [backend repository](https://github.com/laislodi/personal-budget-maker-api) for the full stack details, API reference, and deployment guide.
 
 ---
 
@@ -87,6 +98,12 @@ src/
 └── utils/
     └── validation.ts        # Shared form validation rules
 ```
+
+---
+
+## API endpoints
+
+To see all the API endpoints, check [the backend project](https://github.com/laislodi/personal-budget-maker-api)
 
 ---
 
