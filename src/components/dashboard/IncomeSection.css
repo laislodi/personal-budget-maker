@@ -31,8 +31,8 @@
   letter-spacing: 0.06em;
   padding: 0.15rem 0.55rem;
   border-radius: 999px;
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--success-tint-strong);
+  color: var(--success-text);
 }
 
 .dash-section__total {
@@ -81,8 +81,8 @@
 }
 
 .income-row.is-included {
-  border-color: #bbf7d0;
-  background: #f0fdf4;
+  border-color: var(--success-tint-border);
+  background: var(--success-tint);
 }
 
 .income-row.is-excluded {
@@ -257,6 +257,6 @@
 }
 
 .add-entry-btn:hover {
-  background: #eff6ff;
+  background: var(--primary-tint);
   border-color: var(--primary-light);
 }

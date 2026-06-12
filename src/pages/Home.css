@@ -1,7 +1,7 @@
 /* ── Hero ─────────────────────────────────────────────── */
 
 .hero {
-  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #2563eb 100%);
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #6d28d9 100%);
   color: #fff;
   padding: 6rem 0 5rem;
 }
@@ -214,7 +214,7 @@
 
 .income-block .eq-value { color: var(--success); }
 .expense-block .eq-value { color: var(--danger); }
-.zero-block { border-color: var(--primary); background: #eff6ff; }
+.zero-block { border-color: var(--primary); background: var(--primary-tint); }
 .zero-block .eq-value { color: var(--primary); }
 
 .eq-op {
@@ -244,13 +244,13 @@
 }
 
 .outcome-positive {
-  background: #f0fdf4;
-  border-color: #bbf7d0;
+  background: var(--success-tint);
+  border-color: var(--success-tint-border);
 }
 
 .outcome-negative {
-  background: #fff7ed;
-  border-color: #fed7aa;
+  background: var(--warning-tint);
+  border-color: var(--warning-tint-border);
 }
 
 .outcome-header {
@@ -281,13 +281,13 @@
 }
 
 .outcome-badge.positive {
-  background: #dcfce7;
-  color: #15803d;
+  background: var(--success-tint-strong);
+  color: var(--success-text);
 }
 
 .outcome-badge.negative {
-  background: #ffedd5;
-  color: #c2410c;
+  background: var(--warning-tint-strong);
+  color: var(--warning-text);
 }
 
 .outcome-card p {
@@ -453,5 +453,5 @@
 }
 
 .cta-box .btn-primary:hover {
-  background: #f0f9ff;
+  background: var(--primary-tint);
 }

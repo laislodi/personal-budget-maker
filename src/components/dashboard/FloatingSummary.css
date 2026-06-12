@@ -53,7 +53,7 @@
 .floating-summary__item--income  .floating-summary__value { color: #6ee7b7; }
 .floating-summary__item--expense .floating-summary__value { color: #fca5a5; }
 
-.floating-summary__item--net.is-surplus .floating-summary__value { color: #93c5fd; }
+.floating-summary__item--net.is-surplus .floating-summary__value { color: #c4b5fd; }
 .floating-summary__item--net.is-zero    .floating-summary__value { color: #6ee7b7; }
 .floating-summary__item--net.is-deficit .floating-summary__value { color: #fca5a5; }
 

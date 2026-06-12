@@ -1,19 +1,99 @@
-/* ── Design tokens ────────────────────────────────────── */
+/* ── Design tokens — light theme (default) ────────────── */
 
 :root {
-  --primary:      #1d4ed8;
-  --primary-dark: #202659;
-  --primary-light:#3b82f6;
-  --success:      #059669;
-  --danger:       #dc2626;
-  --text:         #111827;
-  --text-muted:   #6b7280;
-  --bg:           #f9fafb;
-  --surface:      #ffffff;
-  --border:       #e5e7eb;
-  --radius:       8px;
-  --shadow:       0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-md:    0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+  /* Brand */
+  --primary:       #7c3aed;
+  --primary-dark:  #4c1d95;
+  --primary-light: #8b5cf6;
+
+  /* Semantic */
+  --success: #059669;
+  --danger:  #dc2626;
+
+  /* Surfaces & text */
+  --text:       #111827;
+  --text-muted: #6b7280;
+  --bg:         #f9fafb;
+  --surface:    #ffffff;
+  --border:     #e5e7eb;
+
+  /* Misc */
+  --radius:    8px;
+  --shadow:    0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08), 0 2px 4px rgba(0,0,0,0.05);
+
+  /* ── Semantic tint tokens (used in place of hardcoded colors) ── */
+
+  /* Primary / purple tints */
+  --primary-tint:        #f5f3ff;
+  --primary-tint-border: #ddd6fe;
+  --primary-tint-text:   #5b21b6;
+  --primary-accent:      #a78bfa;
+
+  /* Success / green tints */
+  --success-tint:        #f0fdf4;
+  --success-tint-border: #bbf7d0;
+  --success-tint-strong: #dcfce7;
+  --success-text:        #15803d;
+
+  /* Warning / orange tints */
+  --warning-tint:        #fff7ed;
+  --warning-tint-border: #fed7aa;
+  --warning-tint-strong: #ffedd5;
+  --warning-text:        #c2410c;
+
+  /* Danger / red tints */
+  --danger-tint:        #fef2f2;
+  --danger-tint-border: #fca5a5;
+  --danger-tint-alt:    #fee2e2;
+  --danger-tint-hover:  #fff1f2;
+  --danger-text:        #b91c1c;
+
+  /* Skeleton shimmer mid-color */
+  --skeleton-mid: #f3f4f6;
+}
+
+/* ── Dark theme ───────────────────────────────────────── */
+
+[data-theme="dark"] {
+  --primary:       #a78bfa;
+  --primary-dark:  #7c3aed;
+  --primary-light: #c4b5fd;
+
+  --success: #34d399;
+  --danger:  #f87171;
+
+  --text:       #f1f5f9;
+  --text-muted: #94a3b8;
+  --bg:         #0f172a;
+  --surface:    #1e293b;
+  --border:     #334155;
+
+  --shadow:    0 1px 3px rgba(0,0,0,0.4),  0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+
+  --primary-tint:        #3b266b;
+  --primary-tint-border: #3b1f7a;
+  --primary-tint-text:   #c4b5fd;
+  --primary-accent:      #6d28d9;
+
+  --success-tint:        #022c22;
+  --success-tint-border: #064e3b;
+  --success-tint-strong: #064e3b;
+  --success-text:        #6ee7b7;
+
+  --warning-tint:        #3e1e0c;
+  --warning-tint-border: #431407;
+  --warning-tint-strong: #712a16;
+  --warning-text:        #fb923c;
+
+  --danger-tint:        #1f0a0a;
+  --danger-tint-border: #7f1d1d;
+  --danger-tint-alt:    #450a0a;
+  --danger-tint-hover:  #2d0f0f;
+  --danger-text:        #fca5a5;
+
+  --skeleton-mid: #263348;
 }
 
 /* ── Reset ────────────────────────────────────────────── */

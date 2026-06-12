@@ -109,9 +109,9 @@
 }
 
 .budget-summary__tip--neutral { background: var(--bg);  color: var(--text-muted); }
-.budget-summary__tip--success { background: #f0fdf4; color: #15803d; }
-.budget-summary__tip--warning { background: #eff6ff; color: #1d4ed8; }
-.budget-summary__tip--danger  { background: #fff7ed; color: #c2410c; }
+.budget-summary__tip--success { background: var(--success-tint);  color: var(--success-text); }
+.budget-summary__tip--warning { background: var(--primary-tint);  color: var(--primary-tint-text); }
+.budget-summary__tip--danger  { background: var(--warning-tint);  color: var(--warning-text); }
 
 /* ── Responsive ──────────────────────────────────────────── */
 

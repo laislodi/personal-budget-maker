@@ -56,9 +56,9 @@
 /* ── Error banner ─────────────────────────────────────────── */
 
 .dashboard__error {
-  background: #fff7ed;
-  border: 1px solid #fed7aa;
-  color: #c2410c;
+  background: var(--warning-tint);
+  border: 1px solid var(--warning-tint-border);
+  color: var(--warning-text);
   border-radius: var(--radius);
   padding: 0.75rem 1rem;
   font-size: 0.875rem;
@@ -142,7 +142,7 @@
 
 .skeleton-bar {
   height: 160px;
-  background: linear-gradient(90deg, var(--border) 25%, #f3f4f6 50%, var(--border) 75%);
+  background: linear-gradient(90deg, var(--border) 25%, var(--skeleton-mid) 50%, var(--border) 75%);
   background-size: 200% 100%;
   animation: skeleton-shimmer 1.4s infinite;
   border-radius: 14px;

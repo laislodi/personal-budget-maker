@@ -1,5 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
+import { ThemeProvider } from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Home from './pages/Home'
 import Register from './pages/Register'
@@ -8,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 
 export default function App() {
   return (
+    <ThemeProvider>
     <AuthProvider>
       <Navbar />
       <main>
@@ -19,5 +21,6 @@ export default function App() {
         </Routes>
       </main>
     </AuthProvider>
+    </ThemeProvider>
   )
 }
