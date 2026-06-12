@@ -21,9 +21,14 @@ export default function Navbar() {
 
         <div className="navbar-actions">
           {isLoggedIn ? (
-            <button className="btn btn-outline" onClick={handleLogout}>
-              Log out
-            </button>
+            <>
+              <Link to="/dashboard" className="btn btn-ghost">
+                My Budget
+              </Link>
+              <button className="btn btn-outline" onClick={handleLogout}>
+                Log out
+              </button>
+            </>
           ) : (
             <>
               <Link to="/login" className="btn btn-ghost">

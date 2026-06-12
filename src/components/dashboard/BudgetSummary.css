@@ -1,0 +1,138 @@
+.budget-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+/* ── Stats row ──────────────────────────────────────────── */
+
+.budget-summary__stats {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.budget-summary__divider {
+  font-size: 1.4rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  user-select: none;
+}
+
+.budget-summary__stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  flex: 1;
+  min-width: 120px;
+}
+
+.budget-summary__label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+
+.budget-summary__value {
+  font-size: 1.55rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.budget-summary__stat--income .budget-summary__value  { color: var(--success); }
+.budget-summary__stat--expense .budget-summary__value { color: var(--danger); }
+
+.budget-summary__stat--net.is-surplus .budget-summary__value { color: var(--primary); }
+.budget-summary__stat--net.is-zero    .budget-summary__value { color: var(--success); }
+.budget-summary__stat--net.is-deficit .budget-summary__value { color: var(--danger); }
+
+/* ── Progress bar ────────────────────────────────────────── */
+
+.budget-summary__progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.budget-summary__progress-track {
+  flex: 1;
+  height: 8px;
+  background: var(--bg);
+  border-radius: 999px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.budget-summary__progress-fill {
+  height: 100%;
+  background: var(--primary);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.budget-summary__progress-fill.is-over {
+  background: var(--danger);
+}
+
+.budget-summary__progress-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── Dynamic tip ─────────────────────────────────────────── */
+
+.budget-summary__tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  padding: 0.6rem 0.85rem;
+  border-radius: var(--radius);
+}
+
+.budget-summary__tip-icon {
+  font-size: 0.95rem;
+  flex-shrink: 0;
+}
+
+.budget-summary__tip--neutral { background: var(--bg);  color: var(--text-muted); }
+.budget-summary__tip--success { background: #f0fdf4; color: #15803d; }
+.budget-summary__tip--warning { background: #eff6ff; color: #1d4ed8; }
+.budget-summary__tip--danger  { background: #fff7ed; color: #c2410c; }
+
+/* ── Responsive ──────────────────────────────────────────── */
+
+@media (max-width: 600px) {
+  .budget-summary {
+    padding: 1.25rem 1rem;
+  }
+
+  .budget-summary__stats {
+    gap: 0.75rem;
+  }
+
+  .budget-summary__divider {
+    display: none;
+  }
+
+  .budget-summary__stat {
+    min-width: 80px;
+  }
+
+  .budget-summary__value {
+    font-size: 1.25rem;
+  }
+}

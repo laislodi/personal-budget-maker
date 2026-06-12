@@ -1,0 +1,262 @@
+/* ── Shared section chrome (used by both Income and Expense) ── */
+
+.dash-section__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dash-section__title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.dash-section__icon {
+  font-size: 1.2rem;
+}
+
+.dash-section__badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.dash-section__total {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.income-total {
+  color: var(--success);
+}
+
+.dash-section__loading {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 1rem 0;
+}
+
+.dash-section__empty {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0 1rem;
+  line-height: 1.55;
+}
+
+/* ── Income list ──────────────────────────────────────────── */
+
+.income-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.income-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.income-row.is-included {
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+}
+
+.income-row.is-excluded {
+  opacity: 0.7;
+}
+
+.income-row__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.income-row__name {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.income-row__meta {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.income-row__right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+.income-row__monthly {
+  font-size: 0.82rem;
+  color: var(--success);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.income-row__amount {
+  font-size: 0.9rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+  white-space: nowrap;
+}
+
+.income-row__toggle {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.75rem;
+}
+
+/* ── Total row ────────────────────────────────────────────── */
+
+.income-total-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 0.5rem 0 1rem;
+  border-top: 1px solid var(--border);
+  margin-top: 0.25rem;
+}
+
+.income-total-value {
+  color: var(--success);
+  font-size: 1rem;
+}
+
+/* ── Add entry form ───────────────────────────────────────── */
+
+.add-entry-form {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  background: var(--bg);
+  margin-top: 0.5rem;
+}
+
+.add-entry-form__title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.add-entry-form__row {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.add-entry-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  flex: 1;
+  min-width: 140px;
+}
+
+.add-entry-form__field--sm {
+  flex: 0 0 160px;
+}
+
+.add-entry-form__field label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.add-entry-form__field input,
+.add-entry-form__field select {
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.9rem;
+  color: var(--text);
+  background: var(--surface);
+  transition: border-color 0.15s;
+  width: 100%;
+}
+
+.add-entry-form__field input:focus,
+.add-entry-form__field select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.add-entry-form__hint {
+  font-size: 0.8rem;
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+}
+
+.add-entry-form__error {
+  font-size: 0.82rem;
+  color: var(--danger);
+  margin-bottom: 0.75rem;
+}
+
+.add-entry-form__actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Add button ───────────────────────────────────────────── */
+
+.add-entry-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  border: 1.5px dashed var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  justify-content: center;
+}
+
+.add-entry-btn:hover {
+  background: #eff6ff;
+  border-color: var(--primary-light);
+}

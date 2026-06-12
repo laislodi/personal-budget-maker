@@ -1,0 +1,85 @@
+.floating-summary {
+  position: fixed;
+  bottom: 1.75rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(120%);
+  opacity: 0;
+  transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.25s ease;
+  pointer-events: none;
+
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--primary-dark);
+  color: #fff;
+  border-radius: 999px;
+  padding: 0.6rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.22), 0 2px 8px rgba(0, 0, 0, 0.12);
+  white-space: nowrap;
+  z-index: 100;
+}
+
+.floating-summary.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ── Items ────────────────────────────────────────────────── */
+
+.floating-summary__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+  padding: 0 1rem;
+}
+
+.floating-summary__label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  opacity: 0.65;
+}
+
+.floating-summary__value {
+  font-size: 1rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.floating-summary__item--income  .floating-summary__value { color: #6ee7b7; }
+.floating-summary__item--expense .floating-summary__value { color: #fca5a5; }
+
+.floating-summary__item--net.is-surplus .floating-summary__value { color: #93c5fd; }
+.floating-summary__item--net.is-zero    .floating-summary__value { color: #6ee7b7; }
+.floating-summary__item--net.is-deficit .floating-summary__value { color: #fca5a5; }
+
+/* ── Separator ────────────────────────────────────────────── */
+
+.floating-summary__sep {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+
+@media (max-width: 560px) {
+  .floating-summary {
+    bottom: 1rem;
+    padding: 0.55rem 1rem;
+    border-radius: 16px;
+  }
+
+  .floating-summary__item {
+    padding: 0 0.65rem;
+  }
+
+  .floating-summary__value {
+    font-size: 0.88rem;
+  }
+}

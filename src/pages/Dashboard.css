@@ -1,0 +1,158 @@
+.dashboard {
+  padding: 2.5rem 0 4rem;
+  min-height: calc(100vh - 64px);
+  background: var(--bg);
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+
+.dashboard__header {
+  margin-bottom: 1.75rem;
+}
+
+.dashboard__month-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.dashboard__nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  line-height: 1;
+}
+
+.dashboard__nav-btn:hover {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.dashboard__month-label {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  margin: 0;
+}
+
+.dashboard__subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+  margin-left: calc(36px + 0.75rem); /* align with the month label */
+}
+
+/* ── Error banner ─────────────────────────────────────────── */
+
+.dashboard__error {
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  color: #c2410c;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+}
+
+/* ── No budget state ──────────────────────────────────────── */
+
+.dashboard__no-budget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.75rem;
+  padding: 4rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.dashboard__no-budget-icon {
+  font-size: 3rem;
+}
+
+.dashboard__no-budget h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+
+.dashboard__no-budget p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  max-width: 380px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.dashboard__no-budget-hint {
+  font-size: 0.8rem !important;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+/* ── Two-column layout ────────────────────────────────────── */
+
+.dashboard__columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.dashboard__columns > section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+}
+
+@media (max-width: 768px) {
+  .dashboard__columns {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard__subtitle {
+    margin-left: 0;
+  }
+}
+
+/* ── Skeleton loading ─────────────────────────────────────── */
+
+.dashboard__skeleton {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.skeleton-bar {
+  height: 160px;
+  background: linear-gradient(90deg, var(--border) 25%, #f3f4f6 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.4s infinite;
+  border-radius: 14px;
+}
+
+.skeleton-bar--tall {
+  height: 120px;
+}
+
+@keyframes skeleton-shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
