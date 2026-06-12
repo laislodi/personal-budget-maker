@@ -1,6 +1,6 @@
 .expense-badge {
-  background: #fee2e2;
-  color: #b91c1c;
+  background: var(--danger-tint-alt);
+  color: var(--danger-text);
 }
 
 .expense-total {
@@ -94,7 +94,7 @@
 }
 
 .expense-item.is-set {
-  background: #fef2f2;
+  background: var(--danger-tint);
   border-radius: 4px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -131,9 +131,9 @@
 
 .expense-item__amount-btn.has-value {
   color: var(--danger);
-  border-color: #fca5a5;
+  border-color: var(--danger-tint-border);
   font-weight: 700;
-  background: #fff1f2;
+  background: var(--danger-tint-hover);
 }
 
 .expense-item__amount-btn.is-empty {
@@ -142,7 +142,7 @@
 
 .expense-item__amount-btn:hover {
   border-color: var(--primary-light);
-  background: #eff6ff;
+  background: var(--primary-tint);
 }
 
 .expense-item__edit {
