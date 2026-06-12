@@ -1,0 +1,254 @@
+.expense-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.expense-total {
+  color: var(--danger);
+}
+
+.expense-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.5rem 0 1.25rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+}
+
+/* ── Category accordion ──────────────────────────────────── */
+
+.expense-category {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.expense-category__header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: background 0.15s;
+}
+
+.expense-category__header:hover {
+  background: var(--bg);
+}
+
+.expense-category__chevron {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  width: 14px;
+}
+
+.expense-category__name {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text);
+  flex: 1;
+}
+
+.expense-category__total {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--danger);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+.expense-category__body {
+  padding: 0.25rem 0.75rem 0.75rem;
+  border-top: 1px solid var(--border);
+}
+
+.expense-category__empty {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  padding: 0.5rem 0.25rem;
+}
+
+/* ── Expense items ────────────────────────────────────────── */
+
+.expense-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.55rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.12s;
+}
+
+.expense-item:last-of-type {
+  border-bottom: none;
+}
+
+.expense-item.is-set {
+  background: #fef2f2;
+  border-radius: 4px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.expense-item__name {
+  font-size: 0.88rem;
+  color: var(--text);
+  flex: 1;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.expense-item__right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.expense-item__amount-btn {
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.65rem;
+  font-size: 0.82rem;
+  font-variant-numeric: tabular-nums;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.expense-item__amount-btn.has-value {
+  color: var(--danger);
+  border-color: #fca5a5;
+  font-weight: 700;
+  background: #fff1f2;
+}
+
+.expense-item__amount-btn.is-empty {
+  color: var(--text-muted);
+}
+
+.expense-item__amount-btn:hover {
+  border-color: var(--primary-light);
+  background: #eff6ff;
+}
+
+.expense-item__edit {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.expense-item__currency {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.expense-item__input {
+  width: 90px;
+  padding: 0.3rem 0.5rem;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--text);
+}
+
+.expense-item__input:focus {
+  outline: none;
+}
+
+/* ── Add item inline ─────────────────────────────────────── */
+
+.expense-add-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.expense-add-item__input {
+  flex: 1;
+  min-width: 120px;
+  padding: 0.45rem 0.75rem;
+  border: 1.5px solid var(--primary);
+  border-radius: var(--radius);
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.expense-add-item__input:focus {
+  outline: none;
+}
+
+.expense-add-item-btn {
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 0.4rem 0;
+  background: none;
+  border: none;
+  color: var(--primary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: left;
+  transition: color 0.15s;
+}
+
+.expense-add-item-btn:hover {
+  color: var(--primary-dark);
+}
+
+/* ── Bottom actions ──────────────────────────────────────── */
+
+.expense-actions {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.expense-add-category {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.expense-reset-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.25rem 0;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.15s;
+}
+
+.expense-reset-btn:hover {
+  color: var(--danger);
+}
+
+.expense-reset-confirm {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}

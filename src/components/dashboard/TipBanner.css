@@ -1,0 +1,40 @@
+.tip-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.tip-banner__icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+
+.tip-banner__text {
+  font-size: 0.875rem;
+  color: #1e40af;
+  line-height: 1.55;
+  flex: 1;
+  margin: 0;
+}
+
+.tip-banner__close {
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #60a5fa;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.tip-banner__close:hover {
+  color: #1d4ed8;
+}
