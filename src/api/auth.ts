@@ -1,12 +1,15 @@
-// SRP: this module only handles HTTP communication with the auth endpoints.
-// Components depend on these typed functions, not on fetch directly (DIP).
+import { ApiError } from './errors'
 
-const API_BASE = import.meta.env.VITE_API_BASE ?? '/api'
+const API_BASE = import.meta.env.VITE_API_BASE || '/api'
 
 async function handleResponse<T>(res: Response): Promise<T> {
+  if (res.status === 401) {
+    window.dispatchEvent(new Event('auth:expired'))
+    throw new ApiError('Session expired. Please log in again.', 401)
+  }
   if (!res.ok) {
     const body = await res.json().catch(() => ({}))
-    throw new Error((body as { detail?: string }).detail ?? 'Something went wrong')
+    throw new ApiError((body as { detail?: string }).detail ?? 'Something went wrong', res.status)
   }
   return res.json() as Promise<T>
 }
